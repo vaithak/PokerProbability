@@ -33,3 +33,6 @@
 
 # Test file
 test.cpp
+
+# build files
+build/
