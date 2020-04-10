@@ -26,7 +26,7 @@ namespace PokerProbability{
     // capitalize a string
     static void capitalize(std::string &str){
         bool new_word = true;
-        for(int i=0;i<str.length();i++){
+        for(size_t i=0;i<str.length();i++){
             if(new_word == true && (str.at(i) >= 'a' && str.at(i) <= 'z'))
                 str.at(i) = str.at(i) - 'a' + 'A';
             else if(new_word == false && (str.at(i) >= 'A' && str.at(i) <= 'Z'))
@@ -62,7 +62,7 @@ namespace PokerProbability{
         // Parse the input string
         while(ss.good()){
             std::string num_str;
-            std::getline(ss, num_str, ' ');
+            std::getline(ss, num_str, delim);
             try {
                 res.push_back(std::stoi(trim(num_str)));
             }
@@ -126,10 +126,12 @@ namespace PokerProbability{
         // Parse the player names string
         int entered_cards = 0;
         while(ss.good()) { 
-            ++entered_cards;
             std::string card;
             std::getline(ss, card, ' ');
-            cards.push_back(card);
+            if(card.length() != 0){
+                cards.push_back(card);
+                ++entered_cards;
+            }
         }
 
         // verifying number of cards entered

@@ -5,7 +5,6 @@
 #include <unordered_map>
 #include <vector>
 #include <iostream>
-#include <iomanip>
 
 namespace PokerProbability{
 
@@ -29,8 +28,8 @@ namespace PokerProbability{
 
         static std::vector<std::string> cartesianProduct(std::vector<char> a, std::vector<char> b);
         static std::string formattedCard(std::string card);
-        bool validateCard(std::string card) const;
-        bool validateCards(std::vector<std::string> cards) const;
+        bool validateCard(std::string card);
+        bool validateCards(std::vector<std::string> cards);
 
     public:
         PokerProbCalculator(std::vector<std::string> players_names, std::vector<std::pair<std::string, std::string> > players_cards);

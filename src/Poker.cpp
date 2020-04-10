@@ -49,7 +49,7 @@ Command getCommandFromString(std::string cmd_str){
 
 
 // Entry point of program
-int main(int argc, char const *argv[]){
+int main(){
     // Print greeting message
     std::cout<<"Let's calculate the probability of winning in poker "<<SPADE<<CLUB<<HEART<<DIAMOND<<" :)\n\n";
 
@@ -85,7 +85,7 @@ int main(int argc, char const *argv[]){
 
         // clearing up for other player, so they can enter their cards in sequence
         std::cout<<LINE_UP;
-        for(int i=0; i<45 + cards_string.length() + player_names[i].length(); i++)
+        for(size_t i=0; i<45 + cards_string.length() + player_names[i].length(); i++)
             std::cout<<"  ";
         std::cout<<"\r";
     }
