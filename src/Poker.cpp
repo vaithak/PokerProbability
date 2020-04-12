@@ -4,8 +4,6 @@
 #include <vector>
 #include <sstream>
 
-// for testing and debugging purposes
-// #define DEBUG
 #define LINE_UP "\x1b[A"
 #define CONSOLE_PRE ">>> "
 
@@ -79,7 +77,7 @@ int main(){
     std::vector<std::pair<std::string, std::string> > cards(num_players);
     std::string cards_string;
     for(int i=0; i<num_players; i++){
-        std::cout<<CONSOLE_PRE<<"Enter 2 cards in "<<player_names[i]<<"'s hand ex. 2H JS (2 of Hearts and Jack of Spades): ";
+        std::cout<<CONSOLE_PRE<<"Enter 2 cards in "<<player_names[i]<<"'s hand ex. 2H TS (Two of Hearts and Ten of Spades): ";
         getline(std::cin, cards_string, '\n');
         cards[i] = vectorToPair(getCardsFromString(cards_string, 2)); 
 
@@ -91,6 +89,7 @@ int main(){
     }
 
     // Pass the data to probability calculator
+    std::cout<<"Please wait while the input cards are being processed . . . . \n";
     PokerProbCalculator calc_obj(player_names, cards);
     if(calc_obj.errorStatus() == true)
         errorListener("invalid cards entered: " + calc_obj.errorMessage());

@@ -36,3 +36,9 @@ test.cpp
 
 # build files
 build/
+
+# macOS
+.DS_Store
+
+# vs code
+.vscode/
